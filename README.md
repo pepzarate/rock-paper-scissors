@@ -1,2 +1,2 @@
 # rock-paper-scissors
-Created with CodeSandbox
+rock-paper-scissors for Odin Project
