@@ -69,5 +69,7 @@ const game = () => {
         alert(`Final result
         You: ${humanWins}
         Computer: ${computerWins}`)
-    } else console.log("It's ok, come back later")
+    } else console.log("It's ok, come back later and refresh")
 }
+
+game()
