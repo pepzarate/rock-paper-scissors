@@ -74,3 +74,14 @@ const game = () => {
 
 game()
 */
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#sciss')
+console.log(rock)
+console.log(paper)
+console.log(scissors)
+
+const options = document.getElementById('options')
+options.addEventListener("click", e => {
+    console.log(` you have played: ${e.target.id}`)
+})

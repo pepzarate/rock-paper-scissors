@@ -81,6 +81,7 @@ p {
     max-width: 20rem;
     margin: 0 auto;
     border: 0.1rem solid var(--black);
+    border-radius: 1rem;
 }
 
 .header__content__icon{
@@ -99,6 +100,10 @@ p {
     max-width: 10rem;
     font-size: 10rem;
     color: var(--black);
+    transition: all .3s ease;
+}
+.option:hover{
+    font-size: 12rem;
 }
 
 /*Score*/
@@ -125,6 +130,7 @@ p {
     color: var(--white);
     font-size: 2.5rem;
     border: none;
+    cursor: pointer;
 }
 /*Footer*/
 .footer{
