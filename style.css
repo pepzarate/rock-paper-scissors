@@ -9,7 +9,7 @@
     --primary: #1CA386;
     --secondary: #05F0BD;
     --emphasis: #F0112B;
-    --background: #56A31C;
+    --background: #a9e2d5;
     --white: #edfffb;
     --black: #082922;
     --primaryFont: 'Nunito', sans-serif;
@@ -22,7 +22,8 @@ html{
 }
 body {
     height: 100%;
-    background-color: var(--white);
+    background-color: var(--background);
+    font-family: var(--primaryFont);
     font-size: 1.6rem;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -55,21 +56,81 @@ a{
 p {
     font-size: 1.8rem;
     color: var(--black);
-    font-family: Arial, Helvetica, sans-serif;
     overflow-wrap: break-word;
+}
+.center{
+    text-align: center;
 }
 .container{
     max-width: 120rem;
     margin: 0 auto;
 }
+.icon-md{
+    font-size: 3rem;
+}
+/*Header*/
+.header__subtitle{
+    color: var(--primary);
+}
 
-.items{
+.header__content{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem;
+    max-width: 20rem;
+    margin: 0 auto;
+    border: 0.1rem solid var(--black);
+}
+
+.header__content__icon{
+    align-self: center;
+    font-size: 2.5rem;
+}
+/*Main*/
+.options{
     margin-top: 2rem;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 3rem;
 }
 
-.items img {
+.option{
     max-width: 10rem;
+    font-size: 10rem;
+    color: var(--black);
+}
+
+/*Score*/
+.score{
+    margin-top: 2rem;
+}
+
+/*Reset game*/
+.reset{
+    margin-top: 5rem;
+}
+
+.reset__btn{
+    border-style: none;
+    border: 2px solid var(--black);
+    border-radius: .5rem;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    font-size: 2rem;
+    transition: all .5s ease-in-out;
+}
+.reset__btn:hover{
+    background: #146957;
+    color: var(--white);
+    font-size: 2.5rem;
+    border: none;
+}
+/*Footer*/
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #84b1a7;
+    padding: 1rem 0;
 }

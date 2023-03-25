@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link href="/assets/fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="./scripts.js"></script>
     <title>Rock Paper Scissors Challenge</title>
   </head>
   <body>
-    <h1>Rock-Paper-Scissors Challenge</h1>
-    <main class="container items">
-      <img src="./img/rock.png" alt="Rock">
-      <img src="./img/paper.png" alt="Paper">
-      <img src="./img/scissors.png" alt="Scissors">
+    <header class="header">
+      <h1 class="header__title">Rock-Paper-Scissors</h1>
+      <h2 class="header__subtitle">Are you ready for the challenge?</h2>
+      <div class="header__content">
+        <i class="header__content__icon fa-regular fa-lightbulb"></i>
+        <p class="header__content__text">Just make you move and try to defeat CPU. Best of 5</p>
+      </div>
+    </header>
+    <main class="container options">
+      <i class="option fa-regular fa-hand-back-fist" id=""></i>
+      <i class="option fa-regular fa-hand"></i>
+      <i class="option fa-regular fa-hand-scissors"></i>
     </main>
+    <section class="container score">
+      <h2 class="score__title">Score</h2>
+      <p class="center">Human (You): 0</p>
+      <p class="center">Computer: 0</p>
+    </section>
+    <section class="reset center">
+      <button class="reset__btn">Restart Game 🎮</button>
+    </section>
+    <footer class="footer center">
+      <p>Made with 💚 by pepzarate.dev </p>
+    </footer>
   </body> 
 </html>

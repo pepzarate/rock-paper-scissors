@@ -1,4 +1,4 @@
-
+/*
 const getComputerChoice = () => {
     const randomNum = Math.floor(Math.random()*3);
     if(randomNum === 1) return "rock"
@@ -15,12 +15,12 @@ const validatePlayerSelection = (choice) => {
 }
 
 const playRound = (playerSelection, computerSelection) => {
-    /* const options = [
-        {id: 0, name: "rock", beats: "scissors"},
-        {id: 1, name: "scissors", beats: "paper"},
-        {id: 2, name: "paper", beats: "rock"}
-    ]
-    if(options[playerSelection].beats.includes(computerSelection))*/
+    // const options = [
+    //    {id: 0, name: "rock", beats: "scissors"},
+    //    {id: 1, name: "scissors", beats: "paper"},
+    //    {id: 2, name: "paper", beats: "rock"}
+    //]
+    //if(options[playerSelection].beats.includes(computerSelection))
     
     if(playerSelection === computerSelection) return 0
     if(playerSelection === "rock" && computerSelection ==="scissors" ||
@@ -73,3 +73,4 @@ const game = () => {
 }
 
 game()
+*/
