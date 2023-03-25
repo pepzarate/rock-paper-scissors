@@ -1,17 +1,45 @@
-/*
+'use strict'
+let humanWins = 0;
+let computerWins = 0;
+const options = document.getElementById('options')
+const container = document.querySelector('#computerSelection')
+
+options.addEventListener("click", e => {
+    validateGame(humanWins, computerWins)
+     
+    let playerSelection = e.target.id;
+    let computerSelection = getComputerChoice();
+    insertComputerSelection(computerSelection, container)
+    game(playerSelection,computerSelection)
+    console.log(`Human: ${humanWins}`)
+    console.log(`Computer: ${computerWins}`)
+    if(validateGame(humanWins, computerWins)) {
+        console.log("game finished")
+        if(humanWins === 5){
+            console.log("You Won This!")
+        } else console.log("Computer Won This!")
+    }
+})
+
+const insertComputerSelection = (computerSelection, container) => {
+    const content = document.createElement("p");
+    content.textContent = computerSelection;
+    container.appendChild(content);
+}
+
+const validateGame = (human, cpu) => {
+    if(human === 5 || cpu === 5 ){
+        humanWins = 0;
+        computerWins = 0;
+        return true
+    } else return false
+}
+
 const getComputerChoice = () => {
     const randomNum = Math.floor(Math.random()*3);
     if(randomNum === 1) return "rock"
     else if (randomNum === 2) return "paper"
     else return "scissors"
-}
-
-const validatePlayerSelection = (choice) => {
-    if (choice === "") return 0
-    else if (choice === 'rock' ||
-    choice === 'paper' ||
-    choice === 'scissors') return 1
-    else return 2
 }
 
 const playRound = (playerSelection, computerSelection) => {
@@ -28,60 +56,19 @@ const playRound = (playerSelection, computerSelection) => {
     playerSelection === "paper" && computerSelection ==="rock") return 1
     else return 2
 }
-const game = () => {
-    let initGame = confirm("Are you ready?")
-    let humanWins = 0;
-    let computerWins = 0;
 
-    if(initGame){
-        for(let i= 0; i < 5; i++){
-            const playerSelection = prompt(`type your choice:
-            rock - paper - scissors`).toLowerCase()
-    
-            const okSelection = validatePlayerSelection(playerSelection)
-            if (okSelection === 0) {
-                console.log("Type a real option");
-                i--;
-            }
-            if (okSelection === 1) {
-                console.log(`You have played: ${playerSelection}`)  
-                
-                const computerSelection = getComputerChoice();
-                console.log("Computer choice: " + computerSelection)
-                let result = playRound(playerSelection,computerSelection)
-                if(result === 1){
-                    console.log("You win")
-                    humanWins++
-                } else if(result === 2) {
-                    console.log("Computer wins")
-                    computerWins++
-                } else {
-                    console.log("It's tie, repeat it")
-                    i--
-                }
-            }
-            if (okSelection === 2) {
-                console.log("Sorry I don't understand");
-                i--
-            }
-            
-        }
-        alert(`Final result
-        You: ${humanWins}
-        Computer: ${computerWins}`)
-    } else console.log("It's ok, come back later and refresh")
+const game = (playerSelection, computerSelection) => {
+    console.log(`You have played: ${playerSelection}`)  
+    console.log("Computer choice: " + computerSelection)
+    const result = playRound(playerSelection, computerSelection)
+    if(result === 1){
+        console.log(`${playerSelection} beats ${computerSelection}: You Win!!`)
+        humanWins++
+    } else if(result === 2) {
+        console.log(`${computerSelection} beats ${playerSelection}: Computer wins`)
+        computerWins++
+    } else {
+        console.log("It's tie, repeat it")        
+    }
 }
 
-game()
-*/
-const rock = document.querySelector('#rock')
-const paper = document.querySelector('#paper')
-const scissors = document.querySelector('#sciss')
-console.log(rock)
-console.log(paper)
-console.log(scissors)
-
-const options = document.getElementById('options')
-options.addEventListener("click", e => {
-    console.log(` you have played: ${e.target.id}`)
-})
