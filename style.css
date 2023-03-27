@@ -102,6 +102,7 @@ p {
     color: var(--black);
     transition: all .3s ease;
 }
+.option.active,
 .option:hover{
     font-size: 12rem;
 }
